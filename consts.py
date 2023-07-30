@@ -1,0 +1,6 @@
+DATASET_FILE_NAME = 'trial_task.json'
+TASK_2_FILE_NAME = 'task2.xlsx'
+TASK_3_FILE_NAME = 'task3.xlsx'
+TASK_4_FILE_NAME = 'task4.xlsx'
+TASK_5_FILE_NAME = 'task5.xlsx'
+TASK_6_FILE_NAME = 'task6.xlsx'
