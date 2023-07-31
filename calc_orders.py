@@ -1,4 +1,5 @@
 import pandas
+from decimal import Decimal
 from consts import TASK_3_FILE_NAME
 
 
@@ -10,11 +11,11 @@ def calc_orders(data: list, warehouses_tariffs: dict):
         warehouse_name = order['warehouse_name']
         products = order['products']
 
-        total_income = 0
-        total_expenses = 0
+        total_income = Decimal(0)
+        total_expenses = Decimal(0)
         for product in products:
-            price_per_unit = product['price']
-            quantity = product['quantity']
+            price_per_unit = Decimal(product['price'])
+            quantity = Decimal(product['quantity'])
             income = price_per_unit * quantity
             expense = warehouses_tariffs[warehouse_name] * quantity
             total_income += income

@@ -9,7 +9,7 @@ def test_total_profits():
     warehouse_percent_profits = df.groupby('warehouse_name')['percent_profit_product_of_warehouse'].sum()
 
     for warehouse, total_profit in warehouse_percent_profits.items():
-        assert round(total_profit) == 100, f"Total profit for warehouse '{warehouse}' is not equal to 100."
+        assert total_profit == 100, f"Total profit for warehouse '{warehouse}' is not equal to 100."
 
 
 def test_accumulated_percentage():
@@ -22,7 +22,7 @@ def test_accumulated_percentage():
 
         expected_accumulated = prev_accumulated + current_percent
 
-        assert round(current_accumulated,2) == round(expected_accumulated, 2), f"Accumulated percentage mismatch at row {i + 1}."
+        assert round(current_accumulated, 6) == round(expected_accumulated, 6), f"Accumulated percentage mismatch at row {i + 1}."
 
 
 def test_category_assignment():

@@ -24,7 +24,6 @@ print(f'Task 3 result is in {TASK_3_FILE_NAME}')
 calc_income_percentage(data=data[:], warehouses_tariffs=task_1_result.copy())
 print(f'Task 4 result is in {TASK_4_FILE_NAME}')
 
-
 calculate_accumulated_percentage(file_path=TASK_4_FILE_NAME)
 print(f'Task 5 result is in {TASK_5_FILE_NAME}')
 

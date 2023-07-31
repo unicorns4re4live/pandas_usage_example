@@ -1,4 +1,6 @@
 import pandas
+from decimal import Decimal
+
 from consts import TASK_2_FILE_NAME
 
 
@@ -11,8 +13,8 @@ def calc_summary(data: list, warehouses_tariffs: dict):
 
         for product in products:
             product_name = product['product']
-            price_per_unit = product['price']
-            quantity = product['quantity']
+            price_per_unit = Decimal(product['price'])
+            quantity = Decimal(product['quantity'])
 
             income = price_per_unit * quantity
             expense = warehouses_tariffs[warehouse_name] * quantity

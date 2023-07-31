@@ -1,11 +1,13 @@
 import pandas
+from decimal import Decimal
 from consts import TASK_4_FILE_NAME
 
 
 def percent_profit_product_of_warehouse(row: dict, warehouse_profits: dict):
     warehouse_profit = warehouse_profits[row['warehouse_name']]
-    product_profit = row['profit']
-    return (product_profit / warehouse_profit) * 100
+    product_profit = Decimal(row['profit'])
+    return (product_profit / warehouse_profit) * Decimal(100)
+
 
 def calc_income_percentage(data: list, warehouses_tariffs: dict):
     warehouse_product_data = []
@@ -16,8 +18,8 @@ def calc_income_percentage(data: list, warehouses_tariffs: dict):
 
         for product in products:
             product_name = product['product']
-            price_per_unit = product['price']
-            quantity = product['quantity']
+            price_per_unit = Decimal(product['price'])
+            quantity = Decimal(product['quantity'])
 
             income = price_per_unit * quantity
             expense = warehouses_tariffs[warehouse_name] * quantity
